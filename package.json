@@ -1,0 +1,22 @@
+{
+  "name": "makecode-bedrock-bridge",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Local bridge between Microsoft MakeCode and Minecraft for Windows",
+  "scripts": {
+    "start": "node bridge.js",
+    "test": "node --test test/*.test.js"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "main": "editor.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "playwright-core": "1.65.1",
+    "ws": "8.23.0"
+  }
+}

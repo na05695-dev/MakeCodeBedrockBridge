@@ -1,0 +1,52 @@
+MakeCode Bedrock Bridge
+=======================
+
+Windows 版 Minecraft Bedrock と、Microsoft MakeCode for Minecraft
+（https://minecraft.makecode.com/）を同じ PC で接続します。
+旧 Code Connection と CodeConnectFix は終了してから使ってください。
+
+必要なもの
+  Minecraft for Windows、Microsoft Edge、Node.js 22 以上、インターネット接続。
+  Node.js がない場合は https://nodejs.org/ から入手できます。
+  この ZIP には実行に必要な Node.js パッケージを同梱しています。
+
+使い方
+  1. ZIP をすべて展開し、Start.cmd をダブルクリックします。
+     専用の Edge ウィンドウに日本語版 MakeCode が開きます。
+  2. Minecraft の「設定 → 一般 → WebSocket を有効にする」をオンにします。
+     「暗号化された WebSocket の要求」はオンのままで使えます。
+  3. チートを有効にしたローカルワールドを開き、チャットに入力します。
+
+         /connect 127.0.0.1:19135
+
+  4. 黒いウィンドウに「接続済み」と表示されたら、MakeCode の ▶ を押します。
+     Minecraft が一時停止中なら、ゲームに戻って一時停止を解除してください。
+     ワールドを入り直したときは /connect をもう一度入力してください。
+
+最初のプログラム
+  MakeCode で「新しいプロジェクト」を作り、JavaScript に切り替えて入力します。
+
+         player.onChat("hello", function () {
+             player.say("MakeCode OK!")
+         })
+
+  ▶ を押してから、Minecraft のチャットに hello と入力します。
+  hello の先頭に / は不要です。
+
+以前の作品
+  保存済みの .mkcd ファイルがあれば、MakeCode のホーム画面で
+  「読み込む」から選びます。このツールで作った作品は専用 Edge プロファイルに保存されます。
+
+接続できないとき
+  「ポート 19135 は使用中」なら、旧ツールや別のブリッジを終了します。
+  別ポートで起動する場合は、展開したフォルダーで Start.cmd 19136 を実行し、
+  Minecraft 側にも /connect 127.0.0.1:19136 を入力します。
+  /connect が表示されない場合は WebSocket とワールドのチート設定を確認します。
+  ゲーム側に接続エラーが出て黒いウィンドウに何も出ない場合は、
+  ポート番号と Windows のループバック設定を確認します。
+  接続後にプログラムを実行できない場合は、一度 ▶ を押し直してください。
+
+対応範囲
+  Windows 版の同一 PC 上のローカルワールド用です。
+  Minecraft Education 専用のブロックなど、ゲーム側に機能がないものには対応しません。
+  ブリッジを止めるには、専用の MakeCode ウィンドウを閉じます。
